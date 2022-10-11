@@ -4,21 +4,12 @@ type AccordingPropsType = {
     collapsed: boolean
 }
 export function Accordion(props:AccordingPropsType){
-    console.log("Accordion rendering")
-    if(props.collapsed){
     return (
         <div>
         <AccordionTitle title={props.titleValue}/>
-            <AccordionBody/>
+            {!props.collapsed && <AccordionBody/> }
         </div>
     )
-    }else{
-        return (
-            <div>
-                <AccordionTitle title={props.titleValue}/>
-            </div>
-        )
-    }
 }
 type AccordionPropsTitleType = {
     title: string
