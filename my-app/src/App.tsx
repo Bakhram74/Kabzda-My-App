@@ -1,41 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
 import OnOff from "./components/onOff/OnOff";
-import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import {Rating, RatingValuesType} from "./components/Rating/Rating";
 
 
 function App() {
-    return (
-        <div  className={'App'}>
-            <OnOff/>
-            <UncontrolledAccordion titleValue={'Menu'}/>
-            <UncontrolledRating/>
-{/*            <Accordion titleValue={"Menu"} collapsed={true}/>*/}
-            {/*            <Accordion titleValue={"Users"} collapsed={false}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
+    const [ratingValue, setRatingValue] = useState<RatingValuesType>(1)
+    const [on, setOn] = useState<boolean>(true)
+    const [accordionCollapsed, setAccordionCollapsed] = useState(false)
 
+    return (
+        <div className={'App'}>
+            <OnOff setColor={setOn} isOn={on}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UncontrolledRating/>
+            <Accordion titleValue={"Menu"} setCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
+                       collapsed={accordionCollapsed}/>
         </div>
     );
 }
 
-
-//
-// type PagePropsType = {
-//     title: string
-// }
-// function PageTitle(props: PagePropsType){
-//     console.log("PageTitle rendering")
-//     debugger
-//     return(
-//         <h1>{props.title}</h1>
-//     )
-// }
 
 export default App;
