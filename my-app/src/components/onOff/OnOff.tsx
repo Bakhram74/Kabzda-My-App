@@ -6,7 +6,7 @@ type OnOffPropsType = {
     isOn: boolean
 }
 
-const OnOff: FC<OnOffPropsType> = ({setColor, isOn}) => {
+export const OnOff: FC<OnOffPropsType> = ({setColor, isOn}) => {
 
     const onStyle = {
         width: "30px",
@@ -46,4 +46,3 @@ const OnOff: FC<OnOffPropsType> = ({setColor, isOn}) => {
     );
 };
 
-export default OnOff;
