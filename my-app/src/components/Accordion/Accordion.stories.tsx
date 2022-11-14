@@ -1,19 +1,16 @@
 import React, {useState} from "react";
-import {Accordion} from "./Accordion";
+import {AccordingPropsType, Accordion} from "./Accordion";
 import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'Accordion stories',
     component: Accordion,
 }
-const callBack = action('on or off clicked')
-export const CollapsedMenuMode = () => <Accordion titleValue={"Menu"} setCollapsed={callBack}
-                                       collapsed={true}/>
-export const UnCollapsedUserMode = () => <Accordion titleValue={"User"} setCollapsed={callBack}
-                                         collapsed={false}/>
-export const ChangeCollapse = () => {
+export const ModeChanging = ()=>{
+    const onClickCallBack = action("some item was clicked")
     const [accordionCollapsed, setAccordionCollapsed] = useState(false)
-    return <Accordion titleValue={"Menu"} setCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
-                      collapsed={accordionCollapsed}/>
+    return(
+        <Accordion onClick={(id)=>{alert(`user with id ${id}`)}} items={[{title:"Dima",value:1},{title:"Olya",value:2},{title:"Viktor",value:3},{title:"Katya",value:4}]} titleValue={"Menu"} setCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
+                   collapsed={accordionCollapsed}/>
+        )
 }
-

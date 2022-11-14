@@ -16,8 +16,8 @@ function App() {
             <OnOff setColor={setOn} isOn={on}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
-            <Accordion titleValue={"Menu"} setCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}
-                       collapsed={accordionCollapsed}/>
+            {/*<Accordion titleValue={"Menu"} setCollapsed={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*           collapsed={accordionCollapsed}/>*/}
         </div>
     );
 }
