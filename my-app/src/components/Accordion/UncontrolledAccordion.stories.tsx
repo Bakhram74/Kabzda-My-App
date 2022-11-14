@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {UncontrolledAccordion} from "./UncontrolledAccordion";
+import React from "react";
+import {UncontrolledAccordion} from "./Reduser/UncontrolledAccordion";
 
 export default {
-    title: 'UncontrolledAccordion stories',
+    title: 'UncontrolledAccordion',
     component: UncontrolledAccordion,
 }
 
