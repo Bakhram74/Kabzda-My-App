@@ -38,7 +38,6 @@ export const Use_Memo_Example = () => {
     )
 }
 
-
 const UsersSecret = (props:{users:Array<string>})=>{
     console.log("users secret")
     return(
@@ -90,8 +89,7 @@ const memoizedBooks = useMemo(()=>{
          const copyBooks = [...books,"Angular"+new Date().getTime()]
          setBooks(copyBooks)
      }
-}
-   ,[books])
+},[books])
 
     return(
         <div>
