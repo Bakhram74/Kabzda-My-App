@@ -28,26 +28,17 @@ useEffect(()=>{
 
 
 export const SetTimeOutExample = ()=>{
-    console.log('SetTimeOutExample')
-    const [counter,setCounter] = useState("")
-    const [fake,setFake] = useState(1)
+    const [date,setDate] = useState(new Date())
 
     useEffect(()=>{
-        const date = new Date()
 setInterval(()=>{
-    setCounter(date.toLocaleTimeString())
+    setDate(new Date())
 },1000)
-    })
+    },[])
 
     return(
         <div>
-           <div>
-                {counter}
-                {/*{fake}*/}
-           </div>
-            {/*<button onClick={()=>setCounter(counter+1)}>counter</button>*/}
-            {/*<button onClick={()=>setFake(fake+1)}>fake</button>*/}
-            <br/>
+                {date.toLocaleTimeString()}
         </div>
     )
 }
